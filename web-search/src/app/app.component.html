@@ -1,12 +1,5 @@
-<h1>My first search app</h1>
-<ais-instantsearch
-  [config]="{
-    apiKey: 'ca5b6c2d0030bba3a768b669e052af67',
-    appId: 'JA924ZZWU7',
-    indexName: 'lyrics',
-    routing: true
-  }"
->
+<!-- <h1>My first search app</h1>
+
   <ais-search-box></ais-search-box>  
   <ais-hits>
     <ng-template let-hits="hits">
@@ -18,7 +11,46 @@
     </ng-template>
   </ais-hits>
   <ais-refinement-list attribute="brand"></ais-refinement-list>
-</ais-instantsearch>
+</ais-instantsearch> -->
 
-
+<div class="ais-InstantSearch">
+  <h1></h1>
+  <ais-instantsearch
+  [config]="{
+    apiKey: 'ca5b6c2d0030bba3a768b669e052af67',
+    appId: 'JA924ZZWU7',
+    indexName: 'lyrics',
+    routing: true
+  }"
+  >
+    <div class="left-panel">
+      <h2>Search for a song to see its lyrics</h2>
+      <ais-refinement-list attribute="brand"></ais-refinement-list>
+      <ais-configure [searchParameters]="{ hitsPerPage: 8 }"></ais-configure>
+    </div>
+    <div class="right-panel">
+      <ais-search-box></ais-search-box>
+      <ais-hits>
+        <ng-template let-hits="hits">
+          <ol class="ais-Hits-list">
+            <li *ngFor="let hit of hits" class="ais-Hits-item">
+              <img src="assets/corgi.png" style="width:50px;height:60px;" align="left" />
+              <div class="hit-song"> Song Title: {{hit.Song}}</div>
+              <div class="hit-artist"> Artist: {{hit.Artist}}</div>
+              <div class="hit-name">
+                <ais-highlight attribute="name" [hit]="hit"></ais-highlight>
+              </div>
+              <div class="hit-description">
+                <ais-highlight attribute="description" [hit]="hit"></ais-highlight>
+              </div>
+              <div class="hit-rank"> Rank: {{hit.Rank}}</div>
+              <div class="hit-year"> Year: {{hit.Year}}</div>
+            </li>
+          </ol>
+        </ng-template>
+      </ais-hits>
+      <ais-pagination></ais-pagination>
+    </div>
+  </ais-instantsearch>
+</div>
 
