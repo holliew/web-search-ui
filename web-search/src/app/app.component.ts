@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject, forwardRef } from '@angular/core';
+import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
 
 @Component({
   selector: 'app-root',
@@ -8,3 +9,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'web-search';
 }
+
+
+@Component({
+  selector: 'ais-menu-select',
+  template: '<p>It works!</p>'
+})
+export class MenuSelect extends BaseWidget {
+  constructor(
+    @Inject(forwardRef(() => NgAisInstantSearch))
+    public instantSearchParent
+  ) {
+    super('MenuSelect');
+  }
+}
+
