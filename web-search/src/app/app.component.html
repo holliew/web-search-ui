@@ -24,33 +24,39 @@
   }"
   >
     <div class="left-panel">
-      <h2>Search for a song to see its lyrics</h2>
-      <ais-refinement-list attribute="brand"></ais-refinement-list>
+      <h2>Know the lyrics to a song but can't remember the name of it?
+      <p>Obsessed with a song and dying to know all the words?
+      <p>Type in any aspect of a song and we'll find what you're looking for!</h2>
+      <ais-refinement-list attribute="Lyrics"></ais-refinement-list>
       <ais-configure [searchParameters]="{ hitsPerPage: 8 }"></ais-configure>
     </div>
     <div class="right-panel">
       <ais-search-box></ais-search-box>
-      <ais-hits>
-        <ng-template let-hits="hits">
-          <ol class="ais-Hits-list">
-            <li *ngFor="let hit of hits" class="ais-Hits-item">
-              <img src="assets/corgi.png" style="width:50px;height:60px;" align="left" />
-              <div class="hit-song"> Song Title: {{hit.Song}}</div>
-              <div class="hit-artist"> Artist: {{hit.Artist}}</div>
-              <div class="hit-name">
-                <ais-highlight attribute="name" [hit]="hit"></ais-highlight>
-              </div>
-              <div class="hit-description">
-                <ais-highlight attribute="description" [hit]="hit"></ais-highlight>
-              </div>
-              <div class="hit-rank"> Rank: {{hit.Rank}}</div>
-              <div class="hit-year"> Year: {{hit.Year}}</div>
-            </li>
-          </ol>
-        </ng-template>
-      </ais-hits>
+        <ais-hits>
+          <ng-template let-hits="hits">
+            <ol class="ais-Hits-list">
+              <li *ngFor="let hit of hits" class="ais-Hits-item">
+                <button type="button" onclick="">  
+
+                  <img src="assets/corgi.png" style="width:50px;height:60px;" align="left" />
+                  <div class="hit-song"> Song Title:
+                    <ais-highlight attribute="Song" [hit]="hit"></ais-highlight>
+                  </div>
+                  <div class="hit-artist"> Artist:
+                    <ais-highlight attribute="Artist" [hit]="hit"></ais-highlight>
+                  </div>
+                  <div class="hit-rank"> Rank: {{hit.Rank}}</div>
+                  <div class="hit-year"> Year: {{hit.Year}}</div>
+
+                </button>
+              </li>
+            </ol>
+          </ng-template>
+        </ais-hits>
       <ais-pagination></ais-pagination>
     </div>
   </ais-instantsearch>
 </div>
+
+
 

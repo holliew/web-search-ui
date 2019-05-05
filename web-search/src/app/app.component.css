@@ -1,6 +1,6 @@
 .ais-InstantSearch {
 	color: black;
-	font-family: fantasy;
+	font-family: "Palatino";
 }
 
 h1 {
@@ -8,4 +8,15 @@ h1 {
 	border: 3px solid gray;
 	font-size: 50px;
 	background-image: url("https://cdn.pixabay.com/photo/2017/11/15/09/28/music-player-2951399__340.jpg");
+}
+
+button {
+	width: 300px;
+	height: 150px;
+}
+
+.left-panel {
+	font-family: "Palatino";
+	text-align: center;
+	font-size: 10px;
 }
