@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+	
+	background-image: url("blackCock.jpg");
+	background-attachment: fixed;
+  	background-position: center;
+  	background-size: 80%;
+  	background-repeat: no-repeat;
+}
+
+.ais-Hits {
+	background-color: black;
+	opacity: .6;
+	font-size: 10px;
+	padding-top: 10px;
+}
+
+.ais-Highlight {
+	font-size: 15px;
+	padding-left: 40px;
+	text-align: left;
+	opacity: 1;
+	font-style: normal; 
+	font-variant: normal; 
+	font-weight: 400; 
+	  
+	font-family: "Open Sans"; 
+
+	display: block;
+	margin-top: -13px;
+}
+
+a:link{
+	color:yellow;
+	background-color: black;
+	opacity: .6;
+}
+
+a:visited{
+	color:pink;
+}
+
+a:hover{
+	color:black;
+}
+
+a:active{
+	color:yellow;
+}

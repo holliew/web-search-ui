@@ -1,0 +1,38 @@
+<p>
+  Access Lyrics
+</p>
+
+<app-root></app-root>
+
+<div class="ais-InstantSearch">
+  <h1></h1>
+  <ais-instantsearch
+  [config]="{
+    apiKey: 'ca5b6c2d0030bba3a768b669e052af67',
+    appId: 'JA924ZZWU7',
+    indexName: 'lyrics',
+    routing: true
+  }"
+  >
+
+    <div class="left-panel">
+      <ais-refinement-list attribute="Lyrics"></ais-refinement-list>
+      <ais-configure [searchParameters]="{ hitsPerPage: 1 }"></ais-configure>
+    </div>
+    <div class="right-panel">
+        <ais-hits>
+          <ng-template let-hits="hits">
+            <ol class="ais-Hits-list">
+              <a *ngFor="let hit of hits" class="ais-Hits-item">
+                <div class="hit-item"> Artist: {{hit.Artist}}</div>
+                <div class="hit-item"> Rank: {{hit.Rank}}</div>
+                <div class="hit-item"> Year: {{hit.Year}}</div>
+                <div class="hit-lyrics"> Lyrics: {{hit.Lyrics}}</div>
+              </a> 
+            </ol>
+          </ng-template>
+        </ais-hits>
+      <ais-pagination></ais-pagination>
+    </div>
+  </ais-instantsearch>
+</div>
