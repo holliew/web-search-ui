@@ -7,16 +7,12 @@ import { RouterModule } from '@angular/router';
 
 
 import { MainComponent } from './main/main.component';
-import { LyricsComponent } from './lyrics/lyrics.component';
 import { AppRoutingModule } from './app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
-    LyricsComponent,
-    DashboardComponent,
+    MainComponent
   ],
   imports: [
     NgAisModule.forRoot(),
